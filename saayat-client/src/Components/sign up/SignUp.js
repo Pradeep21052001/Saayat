@@ -3,7 +3,7 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import NavigationBar from '../navigation bar/navigationBar';
 import './SignUp.css';
 
-export default function SignUp({ registerDetails }) {
+export default function SignUp() {
 
     const [detailsForm, setDetailsForm] = useState({
         firstName: '',
@@ -14,6 +14,10 @@ export default function SignUp({ registerDetails }) {
         contactNumber: ''
     });
 
+    async function SignUpfun() {
+
+    }
+
     const inputChangedHandler = (e) => {
         const state = detailsForm;
         state[e.target.name] = e.target.value;
@@ -22,7 +26,7 @@ export default function SignUp({ registerDetails }) {
 
     const formSubmitted = (e) => {
         e.preventDefault();
-        registerDetails(detailsForm);
+        SignUpfun(detailsForm);
     }
 
     const { firstName, lastName, email, password, role, contactNumber } = detailsForm;

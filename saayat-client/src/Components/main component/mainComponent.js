@@ -10,32 +10,17 @@ export default function MainComponent() {
 
     const history = useNavigate();
 
-    async function checkCredetialFun(credetialForm) {
-
-    }
-
-    async function SignUpfun() {
-
-    }
     return (
         <Fragment>
             <Routes>
                 <Route
-                    exact
-                    path="/"
-                    element={
-                        <div>
-                            <SignIn checkCredentialsprop={checkCredetialFun} />
-                            <h3>Hi</h3>
-                        </div>
-                    }
+                    exact path="/login" element={<SignIn />}
                 />
                 <Route
-                    exact
-                    path="/signUp"
-                    element={
-                        <SignUp signUpProp={SignUpfun} />
-                    }
+                    exact path="/login" element={<SignIn />}
+                />
+                <Route
+                    exact path="/register" element={<SignUp />}
                 />
             </Routes>
         </Fragment>

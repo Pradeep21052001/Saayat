@@ -1,14 +1,23 @@
-import './App.css';
+import React, { Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import MainComponent from '../main component/mainComponent.js';
+import { Routes, Route } from 'react-router-dom';
+
+import SignIn from '../sign in/SignIn.js';
+import SignUp from '../sign up/SignUp.js';
+import './App.css';
 
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <MainComponent />
-    </BrowserRouter>
+    <Fragment>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<SignIn />}/>
+          <Route exact path="/login" element={<SignIn />}/>
+          <Route exact path="/register" element={<SignUp />}/>
+        </Routes>
+      </BrowserRouter>
+    </Fragment>
   );
 }
 
-export default App;

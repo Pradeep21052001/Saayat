@@ -4,7 +4,7 @@ import UserContext, { useUserContext } from '../user cotext/userContext';
 import NavigationBar from '../navigation bar/navigationBar';
 import './SignIn.css';
 
-export default function SignIn({ checkCredentials }) {
+export default function SignIn() {
 
     const { isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin } = useUserContext();
 
@@ -13,15 +13,19 @@ export default function SignIn({ checkCredentials }) {
         password: ''
     });
 
+    async function checkCredetialFun(credetialForm) {
+
+    }
+
     const inputChangedHandler = (e) => {
         const state = credentialsForm;
         state[e.target.name] = e.target.value;
-        setcredentialsForm({ ...state });
+        checkCredetialFun({ ...state });
     }
 
     const formSubmitted = (e) => {
         e.preventDefault();
-        checkCredentials(credentialsForm);
+        checkCredetialFun(credentialsForm);
     }
 
     const { email, password } = credentialsForm;
