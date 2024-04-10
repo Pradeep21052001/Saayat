@@ -23,22 +23,21 @@ export default function MainComponent() {
                 <Route
                     exact
                     path="/"
-                    render={() => (
+                    element={
                         <div>
-                            <SignIn
-                                checkCredentialsprop={(credentialForm) => { checkCredetialFun(credentialForm) }}
-                            />
+                            <SignIn checkCredentialsprop={checkCredetialFun} />
                             <h3>Hi</h3>
                         </div>
-                    )}
-                ></Route>
+                    }
+                />
                 <Route
-                    exact path="/signUp" render={() => (
-                        <SignUp signUpProp={(detailsForm) => { SignUpfun(detailsForm) }} />
-                    )}
-                ></Route>
+                    exact
+                    path="/signUp"
+                    element={
+                        <SignUp signUpProp={SignUpfun} />
+                    }
+                />
             </Routes>
-            <h2>Hi</h2>
         </Fragment>
     )
 }
